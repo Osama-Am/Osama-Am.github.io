@@ -4,9 +4,20 @@
         h {
             text-align: center;
             font-size: large;
+            font-weight: bolder;
         }
     </style>
     <h>
         This is a test page. Please ignore.
     </h>
+    <br>
+    <button onclick=add()>This is a test button that increases the count of the value shown below by one.</button>
+    <p id="count"></p>
+    <script>
+        document.getElementById("count").innerHTML=0;
+        const add = (function() {
+            let x=0;
+            return function() {x+=1; document.getElementById("count").innerHTML=x;};
+        })(); // this is some massive javascript bullshit, wtf is a self invoking function..
+    </script>
 </html>
